@@ -1,5 +1,4 @@
 from gearError import GearError
-from motorError import MotorError
 
 
 class Motorcycle:
@@ -15,7 +14,7 @@ class Motorcycle:
     def turnOn(self):
         self.turn_on = True
 
-    def turnOf(self):
+    def turnOff(self):
         self.turn_on = False
 
     def status(self):
@@ -40,23 +39,22 @@ class Motorcycle:
     def verifyMotorOn(self):
         if self.status():
             return True
-        raise MotorError
 
-    def verifyGear(self):
-        if self.gear >= self.min_gear and self.gear < self.max_gear:
+    def verifyGear(self, gear):
+        if gear >= self.min_gear and gear < self.max_gear:
             return True
         raise GearError
 
     def increaseGear(self):
         if self.verifyMotorOn():
-            if self.verifyGear():
-                self.gear += 1
+            self.gear += 1
+            if self.verifyGear(self.gear):
                 return self.gear
 
     def decraseGear(self):
         if self.verifyMotorOn():
-            if self.verifyGear():
-                self.gear -= 1
+            self.gear -= 1
+            if self.verifyGear(self.gear):
                 return self.gear
 
     def __str__(self):

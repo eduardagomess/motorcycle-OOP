@@ -9,7 +9,7 @@ motorcycle1.increaseGear()
 motorcycle1.increaseGear()
 motorcycle1.increaseGear()
 motorcycle1.increaseGear()
-motorcycle1.turnOf()
+motorcycle1.turnOff()
 
 
 motorcycle2.turnOn()
@@ -17,4 +17,5 @@ motorcycle2.increaseGear()
 motorcycle2.increaseGear()
 motorcycle2.increaseGear()
 motorcycle2.decraseGear()
-motorcycle2.turnOf()
+motorcycle2.turnOff()
+
